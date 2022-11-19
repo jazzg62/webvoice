@@ -59,7 +59,7 @@
 
                     setTimeout(function(){
                         read();
-                    }, 200);
+                    }, 300);
                 }
 
                 read();

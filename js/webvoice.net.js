@@ -11,9 +11,9 @@ $AM_d("net", function(M){
         console.log("\n---------------------");
         console.log("load word file: " + word);
 
-        var url = M.config.ROOT_PATH + word + ".mp3?&" + (+ new Date());
+        var url = M.config.ROOT_PATH + word + ".wav?&" + (+ new Date());
 
-        this.request(url, callback, "POST", "arraybuffer");
+        this.request(url, callback, "GET", "arraybuffer");
 
         
     };

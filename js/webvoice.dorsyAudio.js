@@ -13,7 +13,7 @@ $AM_d("dorsyAudio", function(M){
 
     //init run
     this.init = function(){
-        (window.webkitAudioContext && (this.ctx = new webkitAudioContext())) || M.deleteSelf("不支持web audio api,请使用webkit内核浏览器");
+        (window.AudioContext && (this.ctx = new AudioContext())) || M.deleteSelf("不支持web audio api,请使用webkit内核浏览器");
     };
 
     //播放buffer
@@ -23,7 +23,8 @@ $AM_d("dorsyAudio", function(M){
             var source = _this.ctx.createBufferSource();
             source.buffer = buffer;
             source.connect(_this.ctx.destination);
-            source.noteOn(0);
+            // source.noteOn(0);
+            source.start();
         });
     };
 
